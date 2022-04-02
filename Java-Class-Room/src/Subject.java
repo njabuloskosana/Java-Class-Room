@@ -13,6 +13,14 @@ public class Subject {
     Add code below
     */
 
+     //Add all student variables with private access modifiers
+
+     //Add all constructors
+
+    //Add all getters and setters for local variables 
+
+     //Add all helper functions for the class
+
 
     
 }

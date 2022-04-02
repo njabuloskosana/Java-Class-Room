@@ -12,5 +12,53 @@ public class Person {
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Add code below
     */
+
+    //Add all student variables with private access modifiers
+    private String name;
+    private String surname;
+
+    //Add all constructors
+
+    // Default constructor
+    Person()
+    {
+        this.name="";
+        this.surname="";
+
+    }
+
+    // name and surname constructor
+    Person(String name,String surname)
+    {
+        // initialize local variables;
+        this.name=name;
+        this.surname=surname;
+    }
+
+    //Add all getters and setters for local variables 
+    //Getters
+    String getName()
+    {
+        return this.name;
+    }
+
+    String getSurname()
+    {
+        return this.surname;
+    }
+
+    //Setters
+    void setSurname(String surname)
+    {
+        this.surname=surname;
+    }
+
+    void setName(String name)
+    {
+        this.name=name;
+    }
+
+
+
     
 }
