@@ -9,7 +9,7 @@
 | **Team Member** | **Profiles** | **Description** | **Skills/Interest**
 | :-----: | :-----: | :-----: | :-----: |
 | ![Njabulo Skosana](https://github.com/COS301-SE-2021/Coviduous/blob/master/team_photos/Njabulo_photo.png) <br/> (Team Leader) <br/> Njabulo Skosana <br/> u18089102 | [GitHub](https://github.com/njabuloskosana) <br/> [Profile Page](https://njabuloskosana.github.io/) <br/> [LinkedIn](https://www.linkedin.com/in/njabulo-skosana-594108210/) <br/> | Njabulo Skosana Computer Scientist. I enjoy learning and teaching science and programming. | Problem Solving<br/>Critical Thinking<br/>Creative Thinking<br/>Interpersonal Skills<br/>Computer Programming |
-| ![Dai Jean]() <br/> Dai Jean | [GitHub](https://github.com/) <br/> [Profile Page](https://) <br/> [LinkedIn](https://www.linkedin.com/) <br/> | I studied architecture and enjoy creating diy projects. My intresest include robotic engineering and the discoveries AI can offer for developing nations | Java |
+| ![Dai Jean](https://github.com/njabuloskosana/Java-Class-Room/blob/main/Java-Class-Room/photos/DaiJean.jpeg) <br/> Dai Jean | [GitHub](https://github.com/) <br/> [Profile Page](https://) <br/> [LinkedIn](https://www.linkedin.com/) <br/> | I studied architecture and enjoy creating diy projects. My intresest include robotic engineering and the discoveries AI can offer for developing nations | Java |
 
 
 ## Getting Started
