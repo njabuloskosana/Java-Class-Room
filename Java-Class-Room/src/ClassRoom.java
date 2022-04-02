@@ -41,74 +41,13 @@ public class ClassRoom {
     Add code below
     */
     //Add all student variables with private access modifiers
-    private Teacher teacher;
-
-    private Student[] students;
-
-    private Student[] topFive;
-
-    private Student[] passed;
-
-    private Student[] failed;
-
-    private double average;
-
-    private int numberOfStudents;
+    
 
      //Add all constructors
-
-    ClassRoom()
-    {
-        //initialize variables
-    }
-
-    ClassRoom(Teacher teacher,int numberOfStudents)
-    {
-        this.teacher= new Teacher(teacher.getName(), teacher.getSurname());
-        this.students=new Student[numberOfStudents];
-
-    }
-
-    ClassRoom(Teacher teacher,Student[] students)
-    {
-        //initialize variables
-        //This function will copy all students from the given student array and store them within the classes own student array
-        
-    }
 
     //Add all getters and setters for local variables 
 
     //Add all helper functions for the class
-
-    void setStudents()
-    {
-        //This function will initialize 10 Student objects and store them in the students array
-    }
-
-    void setStudents(Student[] students)
-    {
-        //This function will copy all students from the given student array and store them within the classes own student array
-    }
-
-    void populateTop5()
-    {
-        //This function will take the top 5 students in the students array and store them into the top5 array
-    }
-
-    void populatePassed()
-    {
-        //This function will take all the students who passed in the students array and store them in the passed array
-    }
-
-    void populateFailed()
-    {
-        //This function will take all the students who failed in the students array and store them in the passed array
-    }
-
-    void calculateAverage()
-    {
-        //This function will calculate the average of the classroom eg. numberOfStudentsWhoPassed/totalNumberOfStudents
-    }
 
 
 
