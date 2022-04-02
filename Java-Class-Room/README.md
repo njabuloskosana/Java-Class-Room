@@ -1,4 +1,4 @@
-# Java Scientific Calculator Project Description
+# Java Class Room Project Description
 
 **Java-ClassRoom** The java class room is a model of a classroom that keeps a record of students marks and allows the educator to calculate performance indicators regarding their class room such as the grade average, min and max marks etc. This project aims to teach students about OOP principles such as classes and objects as well as giving them exposure to using arrays and objects
 
