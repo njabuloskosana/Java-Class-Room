@@ -43,32 +43,32 @@ public class Student extends Person {
 
     //Student Number
 
-    public String getstudentNumber(){
-        return studentNumber;
+    String getstudentNumber(){
+        return this.studentNumber;
     }
     //highest grade
 
-    public double gethighestGrade(){
-        return highestGrade;
+    double gethighestGrade(){
+        return this.highestGrade;
     }
     //highest subject
 
-    public String gethighestSubject(){
-        return highestSubject;
+    String gethighestSubject(){
+        return this.highestSubject;
     }
     //lowest Grade
 
-    public double getlowestGrade(){
-        return lowestGrade;
+    double getlowestGrade(){
+        return this.lowestGrade;
     }
     //lowest Subject
 
-    public String getlowestSubject(){
-        return lowestSubject;
+    String getlowestSubject(){
+        return this.lowestSubject;
     }
     // subject
-    public Subject subjects(){
-        return subjects();
+    Subject subjects(){
+        return this.subjects();
     }
     //Add all helper functions for the class
 
@@ -83,6 +83,11 @@ public class Student extends Person {
             }
         
     }
+    void setSubjects(){}
+    void setHighestGradeAndSubject(){}
+    void setLowestGradeAndSubject(){}
+    void setPassed(){}
+
 
             
     void printReportCard()
