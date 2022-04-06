@@ -41,7 +41,21 @@ public class ClassRoom {
     Add code below
     */
     //Add all student variables with private access modifiers
+    private Teacher teacher;
     
+    private Student[] students;
+
+    private Student[] topFive;
+
+    private Student[] passed;
+
+    private Student[] failed;
+
+    private double average;
+    
+    private int numberOfStudents;
+
+
 
      //Add all constructors
 

@@ -43,47 +43,111 @@ public class Student extends Person {
 
     //Student Number
 
-    String getstudentNumber(){
-        return this.studentNumber;
+    public String setstudentNumber(){
+        return studentNumber;
     }
     //highest grade
 
-    double gethighestGrade(){
-        return this.highestGrade;
+    public double sethighestGrade(){
+        return highestGrade;
     }
     //highest subject
 
-    String gethighestSubject(){
-        return this.highestSubject;
+    public String gethighestSubject(){
+        return highestSubject;
     }
     //lowest Grade
 
-    double getlowestGrade(){
-        return this.lowestGrade;
+    public double getlowestGrade(){
+        return lowestGrade;
     }
     //lowest Subject
 
-    String getlowestSubject(){
-        return this.lowestSubject;
+    public String getlowestSubject(){
+        return lowestSubject;
     }
     // subject
-    Subject subjects(){
-        return this.subjects();
+    public Subject subjects(){
+        return subjects();
     }
     //Add all helper functions for the class
 
     //random student number generator 
+
     
-    public void generateStudentNumber(String studentNumbeString) {}
-        public static void main(String[] args) {
-        	Random objGenerator = new Random();
-            for (int iCount = 0; iCount< 10; iCount++){
-              int randomNumber = objGenerator.nextInt(99999999);
-              System.out.println("Student Number : student - " + randomNumber); 
-            }
-        
+    public String getstudentNumber() {
+
+        return this.studentNumber;
     }
-    void setSubjects(){}
+
+    public void generateStudentNumber(){
+                String generatestudentNumber = "student - ";
+              	Random rnd = new Random();
+                int studentNumber = rnd.nextInt(99999999);
+                String num = String.format("%08d", studentNumber);
+                this.studentNumber = generatestudentNumber + num;
+    }
+    public void setSubjects(){
+        subjects = new Subject[4];
+        String subjectName1 = "Maths";
+        String subjectName2 = "LifeScience";
+        String subjectName3 = "Physical Science";
+        String subjectName4 = "English";
+
+        Random rnd = new Random();
+        double mark1 = rnd.nextInt(99);
+        double mark2 = rnd.nextInt(99);
+        double mark3 = rnd.nextInt(99);
+        double mark4 = rnd.nextInt(99);
+
+        boolean hasPassed1 = false;
+        boolean hasPassed2 = false;
+        boolean hasPassed3 = false;
+        boolean hasPassed4 = false;
+
+
+        if(mark1 >= 50)
+        {
+            hasPassed1 = true;
+        }
+        else if (mark1 <=49)
+        {
+            hasPassed1 = false;
+        }
+
+        if(mark1 >= 50)
+        {
+            hasPassed2 = true;
+        }
+        else if (mark2 <=49)
+        {
+            hasPassed2 = false;
+        }
+
+        if(mark1 >= 50)
+        {
+            hasPassed3 = true;
+        }
+        else if (mark3 <=49)
+        {
+            hasPassed3 = false;
+        }
+        if(mark1 >= 50)
+        {
+            hasPassed4 = true;
+        }
+        else if (mark4 <=49)
+        {
+            hasPassed4 = false;
+        }
+        subjects[0] = new Subject(subjectName1, mark1, hasPassed1);
+        subjects[1] = new Subject(subjectName2, mark2, hasPassed2);
+        subjects[2] = new Subject(subjectName3, mark3, hasPassed3);
+        subjects[3] = new Subject(subjectName4, mark4, hasPassed4);
+    }
+    }
+     
+     
     void setHighestGradeAndSubject(){}
     void setLowestGradeAndSubject(){}
     void setPassed(){}
