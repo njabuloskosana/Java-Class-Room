@@ -17,15 +17,19 @@ public class Student extends Person {
     private boolean passed;
     
     //Add all constructors
-
+    Student (String name, String surname)
+    {
+        super(name, surname);
+      //  this.name = name;
+      //  this.surname = surname;
+    }
     public Student(String name,String surname, String studentNumber,
                 String highestSubject, double highestGrade, 
                     double lowestGrade, String lowestSubject, Subject[] subjects, 
                         boolean passed)
     {
         super(name, surname);
-      //  this.name = name;
-      //  this.surname = surname;
+        
         this.studentNumber = studentNumber;
         this.highestGrade = highestGrade;
         this.highestSubject = highestSubject;
@@ -33,52 +37,41 @@ public class Student extends Person {
         this.lowestSubject = lowestSubject;
         this.subjects = subjects;
         this.passed = passed;
-
-
-
-
-
     }
     //Add all getters and setters for local variables 
 
     //Student Number
 
-    public String setstudentNumber(){
+    public String getStudentNumber(){
         return studentNumber;
     }
     //highest grade
 
-    public double sethighestGrade(){
+    public double getHighestGrade(){
         return highestGrade;
     }
     //highest subject
 
-    public String gethighestSubject(){
+    public String getHighestSubject(){
         return highestSubject;
     }
     //lowest Grade
 
-    public double getlowestGrade(){
+    public double getLowestGrade(){
         return lowestGrade;
     }
     //lowest Subject
 
-    public String getlowestSubject(){
+    public String getLowestSubject(){
         return lowestSubject;
     }
     // subject
-    public Subject subjects(){
-        return subjects();
+    public Subject[] getSubjects(){
+       return subjects;
     }
     //Add all helper functions for the class
 
-    //random student number generator 
-
-    
-    public String getstudentNumber() {
-
-        return this.studentNumber;
-    }
+        //random student number generator 
 
     public void generateStudentNumber(){
                 String generatestudentNumber = "student - ";
@@ -87,6 +80,7 @@ public class Student extends Person {
                 String num = String.format("%08d", studentNumber);
                 this.studentNumber = generatestudentNumber + num;
     }
+        //assigning 4 subjects to an array.
     public void setSubjects(){
         subjects = new Subject[4];
         String subjectName1 = "Maths";
@@ -94,12 +88,14 @@ public class Student extends Person {
         String subjectName3 = "Physical Science";
         String subjectName4 = "English";
 
+        //subject random number generator.
         Random rnd = new Random();
         double mark1 = rnd.nextInt(99);
         double mark2 = rnd.nextInt(99);
         double mark3 = rnd.nextInt(99);
         double mark4 = rnd.nextInt(99);
 
+        //check if student has passed.
         boolean hasPassed1 = false;
         boolean hasPassed2 = false;
         boolean hasPassed3 = false;
@@ -144,20 +140,52 @@ public class Student extends Person {
         subjects[1] = new Subject(subjectName2, mark2, hasPassed2);
         subjects[2] = new Subject(subjectName3, mark3, hasPassed3);
         subjects[3] = new Subject(subjectName4, mark4, hasPassed4);
-    }
+    
     }
      
      
-    void setHighestGradeAndSubject(){}
-    void setLowestGradeAndSubject(){}
-    void setPassed(){}
+    public void setHighestGradeAndSubject(){
+     double mark = 0;
+     String subject = "";
+     for(int i=0; i<subjects.length; i++)
+     {
+        if(mark<subjects[i].getMark())
+        {
+            mark=subjects[i].getMark();
+            subject=subjects[i].getSubjectName();
+        }
+     }
+     this.highestGrade = mark;
+     this.highestSubject = subject;
+
+    }
+    
+    void setLowestGradeAndSubject(){
+        double mark = 0;
+     String subject = "";
+     for(int i=0; i>subjects.length; i++)
+     {
+        if(mark>subjects[i].getMark())
+        {
+            mark=subjects[i].getMark();
+            subject=subjects[i].getSubjectName();
+        }
+     }
+     this.lowestGrade = mark;
+     this.lowestSubject = subject;
+    }
+    void setPassed(){
+        //using array to print out if student passed 3 of the 4 subjects
+        
+        }
 
 
             
     void printReportCard()
     {
         // print out to the terminal the report card of the student
-        /* eg.
+        /* eg.-+*
+
          * ------------------------------------------------------------------------------------------------
          *                                 Report Card For Njabulo Skosana
          *  Student Number : student-18089102

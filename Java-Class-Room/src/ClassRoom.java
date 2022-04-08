@@ -52,17 +52,75 @@ public class ClassRoom {
     private Student[] failed;
 
     private double average;
-    
+
     private int numberOfStudents;
 
-
+// teacher object
+    Teacher myteacher = new Teacher("Njabulo", "Skosana");
+// create a deep copy function with a public modifier to copy all student objects in array to local students array inside the ClassRoom Class;
+    
 
      //Add all constructors
+    ClassRoom(Teacher teacher, int numberOfStudents)
+    {
+        this.teacher = new Teacher(teacher.getName(), teacher.getSurname());
+        this.students = new Student[numberOfStudents];
+    }
+     ClassRoom(Teacher teacher, Student[] students){}
 
     //Add all getters and setters for local variables 
 
-    //Add all helper functions for the class
+    //getters
+    public int getnumberOfStudents(){
+        return numberOfStudents;
+    }
+    public Teacher getTeacher(){
+        return teacher;
+    }
+    public Student[] getStudents(){
+        return students;
+    }
+    public Student[] getTopFive(){
+        return topFive;
+    }
+    public Student[] getPassed(){
+        return passed;
+    }
+    public Student[] getFailed(){
+        return failed;
+    }
+    public double getAverage(){
+        return average;
+    }
+    //setters
+    public int setNumberOfStudents(){
+    return numberOfStudents;
+    }
+    public Teacher setTeacher(){
+        return teacher;
+    }
+    public Student[] setStudents(){
+        return students;
+    }
+    public Student[] setTopFive(){
+        return topFive;
+    }
+    public Student[] setPassed(){
+        return passed;
+    }
+    public Student[] setFailed(){
+        return failed;
+    }
+    public double setAverage(){
+        return average;
+    } 
 
+    //Add all helper functions for the class
+    void setSubjects(Student[]students){}
+    void populateTop5(){}
+    void populatePassed(){}
+    void populateFailed(){}
+    void calculateAverage(){}
 
 
 

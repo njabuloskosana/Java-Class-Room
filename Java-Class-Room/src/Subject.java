@@ -1,3 +1,5 @@
+import javax.security.auth.SubjectDomainCombiner;
+
 public class Subject {
     /* Do not remove the comments
     // 1. create a string reference to the name of the subject with a private access modifier eg. private String subjectName;
@@ -14,13 +16,44 @@ public class Subject {
     */
 
      //Add all student variables with private access modifiers
+    private String subjectName;
+    private double mark;
+    private boolean passed;
 
-     //Add all constructors
+    //Add all constructors
+    Subject(String subjectName, double mark, boolean passed){
+        this.subjectName = subjectName;
+        this.mark = mark;
+        this.passed = passed;
+    }
+    Subject(String subjectName, double mark){
+        this.subjectName = subjectName;
+        this.mark = mark;
+    }
 
     //Add all getters and setters for local variables 
+    public String getSubjectName(){
+
+        return subjectName;
+    }
+    public double getMark(){
+        return mark;
+    }
+    public boolean getPassed(){
+        return passed;
+    }
+
 
      //Add all helper functions for the class
+        void generateStudentNumber(){}
+        void setSubjects(){}
+        void setPassed(String subjectName, boolean passed){
+            this.subjectName = subjectName;
+            this.passed = passed;
 
+        }
+        
 
+        
     
 }
