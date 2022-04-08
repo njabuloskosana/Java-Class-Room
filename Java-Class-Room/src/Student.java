@@ -104,7 +104,7 @@ public class Student extends Person {
 
         if(mark1 >= 50)
         {
-            hasPassed1 = true;
+            hasPassed1 = false;
         }
         else if (mark1 <=49)
         {
@@ -113,7 +113,7 @@ public class Student extends Person {
 
         if(mark1 >= 50)
         {
-            hasPassed2 = true;
+            hasPassed2 = false;
         }
         else if (mark2 <=49)
         {
@@ -122,7 +122,7 @@ public class Student extends Person {
 
         if(mark1 >= 50)
         {
-            hasPassed3 = true;
+            hasPassed3 = false;
         }
         else if (mark3 <=49)
         {
@@ -130,7 +130,7 @@ public class Student extends Person {
         }
         if(mark1 >= 50)
         {
-            hasPassed4 = true;
+            hasPassed4 = false;
         }
         else if (mark4 <=49)
         {
@@ -163,10 +163,10 @@ public class Student extends Person {
     
       // set up the lowest grade function
      // set up the lowest subject function
-    void setLowestGradeAndSubject(){
+    public void setLowestGradeAndSubject(){
         double mark = 0;
      String subject = "";
-     for(int i=0; i>subjects.length; i++)
+     for(int i=0; i<subjects.length; i++)
      {
         if(mark>subjects[i].getMark())
         {
@@ -179,8 +179,31 @@ public class Student extends Person {
     }
     void setPassed(){
         //using array to print out if student passed 3 of the 4 subjects
-        
+        //boolean = passed;
+        double mark = 0;
+        String subject = "";
+        for(int i=0; i<subjects.length; i++)
+        {
+            if (mark >= subjects[i].getMark())
+            {
+                mark=subjects[i].getMark();
+                subject=subjects[i].getSubjectName();
+            }
         }
+            for (int m = 0; m < subjects.length; m++)
+    
+            if (subjects[m].getMark() <= 50)
+            {
+                mark=subjects[m].getMark();
+            }
+             
+        this.passed = passed;
+    }
+
+
+
+            
+        
 
 
             
