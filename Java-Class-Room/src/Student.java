@@ -143,7 +143,8 @@ public class Student extends Person {
     
     }
      
-     
+     // set up the highest grade function
+     // set up the highest subject function
     public void setHighestGradeAndSubject(){
      double mark = 0;
      String subject = "";
@@ -160,6 +161,8 @@ public class Student extends Person {
 
     }
     
+      // set up the lowest grade function
+     // set up the lowest subject function
     void setLowestGradeAndSubject(){
         double mark = 0;
      String subject = "";
