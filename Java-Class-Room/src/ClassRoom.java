@@ -124,14 +124,40 @@ public class ClassRoom {
     {
 
     }
-    void populateTop5(){}
-    void setpopulatePassed()
+    public void setpopulateTop5(Student[] students, Student[]topFive){
+        topFive = new Student [10];
+        int mark = 0; 
+        int index = 0;
+        int count = 0;     
+        for(int i=0; i<students.length;i++)
+        {
+            //get passed students and traverse through tem at the different indexes return their name and store into top five
+            if(students[i].getPassed()==true)
+            {
+                topFive[index] = students[i].getName();
+                index++; 
+                mark = students[i].getMark();
+            }
+            //count the passed students to get the top five of the passed individuals
+            if (count>=5)
+            {
+                //print the students in the top five
+                System.out.println(students.getTopFive());
+            }
+           
+        }
+        
+            
+            
+
+    }
+   public void setpopulatePassed()
     {
         passed = new Student [10];
         int index = 0;      
         for(int i=0; i<students.length;i++)
         {
-            if(students[i].getFailed()==true)
+            if(students[i].getPassed()==true)
             {
                 passed[index] = students[i];
                 index++; 
@@ -140,7 +166,7 @@ public class ClassRoom {
         }
 
     }
-    public void setpopulateFailed()
+    public void setpopulateFailed(Student[] faileStudents)
     {
         //those who have failed
         failed = new Student [10];
