@@ -67,6 +67,9 @@ public class ClassRoom {
         this.students = new Student[numberOfStudents];
     }
      ClassRoom(Teacher teacher, Student[] students){}
+     ClassRoom(Student[] students, double average, int numberOfStudents){
+        
+     }
 
     //Add all getters and setters for local variables 
 
@@ -77,7 +80,7 @@ public class ClassRoom {
     public Teacher getTeacher(){
         return teacher;
     }
-    public Student[] getStudents(){
+     Student[] getStudents(){
         return students;
     }
     public Student[] getTopFive(){
@@ -93,34 +96,75 @@ public class ClassRoom {
         return average;
     }
     //setters
-    public int setNumberOfStudents(){
-    return numberOfStudents;
+    public void setNumberOfStudents(int numberOfStudents, Student[] students){
+    this.students = students;
+    this.numberOfStudents = numberOfStudents;
     }
-    public Teacher setTeacher(){
-        return teacher;
+    public void setTeacher(Teacher teacher){
+        this.teacher = teacher;
     }
-    public Student[] setStudents(){
-        return students;
+    public void setStudents(Student[] students){
+        this.students = students;
     }
-    public Student[] setTopFive(){
-        return topFive;
+    public void setTopFive(Student[] topfive){
+        this.topFive = topFive;
     }
-    public Student[] setPassed(){
-        return passed;
+    public void setPassed(Student[] passed){
+        this.passed = passed;
     }
-    public Student[] setFailed(){
-        return failed;
+    public void setFailed(Student[] failed){
+        this.failed = failed;
     }
-    public double setAverage(){
-        return average;
+    void setAverage(double average){
+        this.average = average;
     } 
 
     //Add all helper functions for the class
-    void setSubjects(Student[]students){}
+    void setSubjects(Student[]students)
+    {
+
+    }
     void populateTop5(){}
-    void populatePassed(){}
-    void populateFailed(){}
-    void calculateAverage(){}
+    void populatePassed()
+    {
+        int numberOfStudentsWhoPassed = 0;
+        for(int i=0; i<students.length;i++)
+        {
+            numberOfStudentsWhoPassed++;
+        }
+        int passedStudents = numberOfStudentsWhoPassed;
+        this.passed = passedStudents;
+    }
+    public void populateFailed()
+    {
+        //those who have failed
+        int failed = students.getStudents();
+        for(int i=0; i<students.length;i++)
+        {
+            numberOfStudentsWhoFailed++;
+        }
+        int failedStudents = numberOfStudentsWhoFailed;
+        this.failed = failedStudents;
+
+    }
+     void setCalculateAverage()
+    {      
+        //getting array length
+        int numberOfStudentsWhoPassed = 0;
+        for(int i=0; i<students.length;i++)
+        {
+           if(students[i].getPassed()==true)
+           {
+            numberOfStudentsWhoPassed++;
+           }
+        }
+        double avg = numberOfStudentsWhoPassed/10;
+        double percentage = avg * 100;
+        this.average = percentage;
+    
+        
+    }   
+
 
 
 
