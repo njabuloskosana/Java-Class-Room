@@ -18,7 +18,7 @@ public class Person {
     private String surname;
 
     //Add all constructors
-
+    
     // Default constructor
     Person()
     {
@@ -37,23 +37,23 @@ public class Person {
 
     //Add all getters and setters for local variables 
     //Getters
-    String getName()
+    public String getName()
     {
         return this.name;
     }
 
-    String getSurname()
+    public String getSurname()
     {
         return this.surname;
     }
 
     //Setters
-    void setSurname(String surname)
+    public void setSurname(String surname)
     {
         this.surname=surname;
     }
 
-    void setName(String name)
+    public void setName(String name)
     {
         this.name=name;
     }

@@ -42,7 +42,7 @@ public class ClassRoom {
     */
     //Add all student variables with private access modifiers
     private Teacher teacher;
-
+    
     private Student[] students;
 
     private Student[] topFive;
@@ -55,60 +55,150 @@ public class ClassRoom {
 
     private int numberOfStudents;
 
+// teacher object
+    Teacher myteacher = new Teacher("Njabulo", "Skosana");
+// create a deep copy function with a public modifier to copy all student objects in array to local students array inside the ClassRoom Class;
+    
+
      //Add all constructors
-
-    ClassRoom()
+    ClassRoom(Teacher teacher, int numberOfStudents)
     {
-        //initialize variables
+        this.teacher = new Teacher(teacher.getName(), teacher.getSurname());
+        this.students = new Student[numberOfStudents];
     }
-
-    ClassRoom(Teacher teacher,int numberOfStudents)
-    {
-        this.teacher= new Teacher(teacher.getName(), teacher.getSurname());
-        this.students=new Student[numberOfStudents];
-
-    }
-
-    ClassRoom(Teacher teacher,Student[] students)
-    {
-        //initialize variables
-        //This function will copy all students from the given student array and store them within the classes own student array
+     ClassRoom(Teacher teacher, Student[] students){}
+     ClassRoom(Student[] students, double average, int numberOfStudents){
         
-    }
+     }
 
     //Add all getters and setters for local variables 
 
+    //getters
+    public int getnumberOfStudents(){
+        return numberOfStudents;
+    }
+    public Teacher getTeacher(){
+        return teacher;
+    }
+    public Student[] getStudents(){
+        return students;
+    }
+    public Student[] getTopFive(){
+        return topFive;
+    }
+    public Student[] getPassed(){
+        return passed;
+    }
+    public Student[] getFailed(){
+        return failed;
+    }
+    public double getAverage(){
+        return average;
+    }
+    //setters
+    public void setNumberOfStudents(int numberOfStudents, Student[] students){
+    this.students = students;
+    this.numberOfStudents = numberOfStudents;
+    }
+    public void setTeacher(Teacher teacher){
+        this.teacher = teacher;
+    }
+    public void setStudents(Student[] students){
+        this.students = students;
+    }
+    public void setTopFive(Student[] topfive){
+        this.topFive = topFive;
+    }
+    public void setPassed(Student[] passed){
+        this.passed = passed;
+    }
+    public void setFailed(Student[] failed){
+        this.failed = failed;
+    }
+    void setAverage(double average){
+        this.average = average;
+    } 
+
     //Add all helper functions for the class
-
-    void setStudents()
+    void setSubjects(Student[]students)
     {
-        //This function will initialize 10 Student objects and store them in the students array
-    }
 
-    void setStudents(Student[] students)
-    {
-        //This function will copy all students from the given student array and store them within the classes own student array
     }
+    public void setpopulateTop5(Student[] students, Student[]topFive){
+        topFive = new Student [10];
+        int mark = 0; 
+        int index = 0;
+        int count = 0;     
+        for(int i=0; i<students.length;i++)
+        {
+            //get passed students and traverse through tem at the different indexes return their name and store into top five
+            if(students[i].getPassed()==true)
+            {
+                topFive[index] = students[i].getName();
+                index++; 
+                mark = students[i].getMark();
+            }
+            //count the passed students to get the top five of the passed individuals
+            if (count>=5)
+            {
+                //print the students in the top five
+                System.out.println(students.getTopFive());
+            }
+           
+        }
+        
+            
+            
 
-    void populateTop5()
-    {
-        //This function will take the top 5 students in the students array and store them into the top5 array
     }
+   public void setpopulatePassed()
+    {
+        passed = new Student [10];
+        int index = 0;      
+        for(int i=0; i<students.length;i++)
+        {
+            if(students[i].getPassed()==true)
+            {
+                passed[index] = students[i];
+                index++; 
+            }
+            
+        }
 
-    void populatePassed()
-    {
-        //This function will take all the students who passed in the students array and store them in the passed array
     }
+    public void setpopulateFailed(Student[] faileStudents)
+    {
+        //those who have failed
+        failed = new Student [10];
+        int index = 0;      
+        for(int i=0; i<students.length;i++)
+        {
+            if(students[i].getFailed()==false)
+            {
+                failed[index] = students[i];
+                index++; 
+            }
+            
+        }
 
-    void populateFailed()
-    {
-        //This function will take all the students who failed in the students array and store them in the passed array
     }
-
-    void calculateAverage()
-    {
-        //This function will calculate the average of the classroom eg. numberOfStudentsWhoPassed/totalNumberOfStudents
-    }
+     void setCalculateAverage()
+    {      
+        //getting array length
+        int numberOfStudentsWhoPassed = 0;
+        for(int i=0; i<students.length;i++)
+        {
+           if(students[i].getPassed()==true)
+           {
+            numberOfStudentsWhoPassed++;
+           }
+        }
+        double avg = numberOfStudentsWhoPassed/10;
+        double percentage = avg * 100;
+        this.average = percentage;
+    
+        
+    }   
 
 
 
