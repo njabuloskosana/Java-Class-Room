@@ -80,7 +80,7 @@ public class ClassRoom {
     public Teacher getTeacher(){
         return teacher;
     }
-     Student[] getStudents(){
+    public Student[] getStudents(){
         return students;
     }
     public Student[] getTopFive(){
@@ -125,26 +125,35 @@ public class ClassRoom {
 
     }
     void populateTop5(){}
-    void populatePassed()
+    void setpopulatePassed()
     {
-        int numberOfStudentsWhoPassed = 0;
+        passed = new Student [10];
+        int index = 0;      
         for(int i=0; i<students.length;i++)
         {
-            numberOfStudentsWhoPassed++;
+            if(students[i].getFailed()==true)
+            {
+                passed[index] = students[i];
+                index++; 
+            }
+            
         }
-        int passedStudents = numberOfStudentsWhoPassed;
-        this.passed = passedStudents;
+
     }
-    public void populateFailed()
+    public void setpopulateFailed()
     {
         //those who have failed
-        int failed = students.getStudents();
+        failed = new Student [10];
+        int index = 0;      
         for(int i=0; i<students.length;i++)
         {
-            numberOfStudentsWhoFailed++;
+            if(students[i].getFailed()==false)
+            {
+                failed[index] = students[i];
+                index++; 
+            }
+            
         }
-        int failedStudents = numberOfStudentsWhoFailed;
-        this.failed = failedStudents;
 
     }
      void setCalculateAverage()
