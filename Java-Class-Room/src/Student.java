@@ -69,6 +69,10 @@ public class Student extends Person {
     public Subject[] getSubjects(){
        return subjects;
     }
+    public boolean getPassed(){
+        return passed;
+    }
+    
     //Add all helper functions for the class
 
         //random student number generator 
@@ -164,7 +168,7 @@ public class Student extends Person {
       // set up the lowest grade function
      // set up the lowest subject function
     public void setLowestGradeAndSubject(){
-        double mark = 0;
+     double mark = 0;
      String subject = "";
      for(int i=0; i<subjects.length; i++)
      {
@@ -172,33 +176,44 @@ public class Student extends Person {
         {
             mark=subjects[i].getMark();
             subject=subjects[i].getSubjectName();
+            
         }
      }
      this.lowestGrade = mark;
      this.lowestSubject = subject;
     }
-    void setPassed(){
+    public void setPassed(){
         //using array to print out if student passed 3 of the 4 subjects
-        //boolean = passed;
-        double mark = 0;
+        
+        double mark = 50;
         String subject = "";
-        for(int i=0; i<subjects.length; i++)
-        {
-            if (mark >= subjects[i].getMark())
+        int count = 0;
+                      
+        for(int i = 0; i<subjects.length; i++)
             {
-                mark=subjects[i].getMark();
-                subject=subjects[i].getSubjectName();
+            if(subjects[i].getMark() >= mark)
+            {
+               // mark=subjects[i].getMark();
+               // subject=subjects[i].getSubjectName();
+               subjects[i].setPassed(true);
+               count++;
+
+               System.out.println(subjects[i].getSubjectName());
             }
+
         }
-            for (int m = 0; m < subjects.length; m++)
-    
-            if (subjects[m].getMark() <= 50)
-            {
-                mark=subjects[m].getMark();
-            }
-             
-        this.passed = passed;
+        if (count>=3)
+        {
+            this.passed = true;
+        }
+       
+                
+
+        
     }
+
+
+
 
 
 
