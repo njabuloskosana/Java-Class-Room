@@ -33,7 +33,6 @@ public class Subject {
 
     //Add all getters and setters for local variables 
     public String getSubjectName(){
-
         return subjectName;
     }
     public double getMark(){
@@ -42,8 +41,15 @@ public class Subject {
     public boolean getPassed(){
         return passed;
     }
-
-
+    public void setSubjectName(){
+        this.subjectName = subjectName;
+    }
+    public void setMark(){
+        this.mark = mark;
+    }
+    public void setPassed(boolean studentpassed){
+        this.passed = studentpassed;
+    }
      //Add all helper functions for the class
         void generateStudentNumber(){}
         void setSubjects(){}
